@@ -1,0 +1,31 @@
+<ion-content>
+  <ion-icon (click)="back()" class="back-icon text-black" name="ios-arrow-back"></ion-icon>
+  <img class="banner" [src]="viewdetail.attachment && viewdetail.attachment !=='' && viewdetail.attachment !=='http://15.206.103.57/Stage//'?viewdetail.attachment:'assets/img/freelancer-sub1.png'">
+  
+  <div padding>
+    <ion-item no-lines no-padding>
+      <img class="freelancer-img" item-left [src]="viewdetail.profile_pic && viewdetail.profile_pic !=='' && viewdetail.profile_pic !=='http://15.206.103.57/Stage//'?viewdetail.profile_pic:'assets/img/user_default.png'">
+      <div item-start>
+        <div class="small-text bold-font" *ngIf="viewdetail.first_name!=''">{{viewdetail.first_name}} {{viewdetail.last_name}}</div>
+        <div class="small-text bold-font" *ngIf="viewdetail.first_name==''">{{viewdetail.name}}</div>
+        <div style="margin-top: 5px" class="text-grey smaller-text">{{viewdetail.skills}}</div>
+      </div>
+    </ion-item>
+    <div margin-top class="bold-font medium-text">{{viewdetail.title}}</div>
+    <div margin-top class="small-text text-darkgrey">{{viewdetail.description}}</div>
+    <div class="top-margin bold-font normal-font medium-text">${{viewdetail.price}}</div>
+    <div margin-top class="small-text text-grey">Start Date<span class="right-align normal-font">{{viewdetail.project_from | date: "dd-MMM-yyyy "}}</span></div>
+    <div margin-top class="small-text text-grey">End Date<span class="right-align normal-font">{{viewdetail.project_to | date: "dd-MMM-yyyy "}}</span></div>
+
+    <div class="top-margin bold-font medium-text">Skills</div>
+    <div margin-top class="small-text text-darkgrey">{{viewdetail.skills}}</div>
+    <!-- <div margin-top class="small-text text-darkgrey">simply dummy</div>
+    <div margin-top class="small-text text-darkgrey">printing and typsetting</div>
+    <div margin-top class="small-text text-darkgrey">standard dummy</div>
+    <div margin-top class="small-text text-darkgrey">specimen book</div> -->
+    <div class="btn-div">
+      <button ion-button round full (click)="goInbox(viewdetail)">Accept</button>
+    </div>
+  </div>
+
+</ion-content>
