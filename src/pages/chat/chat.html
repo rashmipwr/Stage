@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center><img class="header-icon" src="assets/img/stage-header.png"></ion-title>
+    <ion-buttons end>
+      <button padding ion-button icon-only>
+        <ion-icon class="text-black" name="ios-notifications-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <div *ngFor="let chat of chatList;let i = index">
+    <div *ngIf="!chat.isMine">
+      <ion-item no-padding no-lines>
+        <img class="other-user-img" src="{{chat.userProfile}}">
+        <div class="other-div-content smaller-text">
+          <div class="text-darkgrey">{{chat.dateTime}}</div>
+          <div margin-top text-wrap class="message-left text-dark">{{chat.message}}</div>
+        </div>
+      </ion-item>
+    </div>
+
+    <div *ngIf="chat.isMine" margin-top>
+      <ion-item text-right no-padding no-lines>
+        <div class="my-div-content smaller-text">
+          <div class="text-darkgrey">{{chat.dateTime}}</div>
+          <div class="message-right"><span text-wrap class="text-white message small-text">{{chat.message}}</span></div>
+        </div>
+      </ion-item>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="type-div">
+    <input padding placeholder="Type a message..." type="text" class="chat-input full-input medium-text text-grey">
+    <div class="chat-icons-div">
+      <span>
+        <ion-icon class="chat-icon text-grey" name="attach"></ion-icon>
+      </span>
+      <span>
+        <ion-icon class="chat-icon text-grey" name="mic"></ion-icon>
+      </span>
+      <span>
+        <ion-icon class="chat-icon text-grey" name="md-arrow-round-forward"></ion-icon>
+      </span>
+    </div>
+  </div>
+</ion-footer>

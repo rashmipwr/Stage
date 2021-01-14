@@ -1,0 +1,13 @@
+page-dj-list {
+  ion-card{
+    border-radius: 10px !important;
+    padding: 7pt;
+  }
+  .card{
+    margin: 0;
+    width: 100%;
+  }
+  .user-img{
+    height: 23pt;width: 23pt;object-fit: cover;border-radius: 5px;
+  }
+}
